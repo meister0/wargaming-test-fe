@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 
 import Head from 'next/head'
+import Breadcrumbs from 'nextjs-breadcrumbs'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -54,6 +55,13 @@ const BasicLayout = ({ children, title }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyle />
+      <Breadcrumbs
+        useDefaultStyle
+        rootLabel="Home"
+        transformLabel={(title) =>
+          title.charAt(0).toUpperCase() + title.slice(1)
+        }
+      />
       {children}
     </>
   )

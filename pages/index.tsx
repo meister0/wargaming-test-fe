@@ -1,7 +1,12 @@
-import BasicLayout from 'layout/Basic'
+import BasicLayout from 'components/layout/Basic'
+import { Home } from 'components/pages/Home'
 
-const Home = () => {
-  return <BasicLayout></BasicLayout>
+const HomePage = () => {
+  return (
+    <BasicLayout>
+      <Home />
+    </BasicLayout>
+  )
 }
 
-export default Home
+export default HomePage
