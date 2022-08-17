@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background: url('/bg.jpg') center center;
+    background: url('bg.jpg') center center;
   }
 
   img, picture, video, canvas, svg {
@@ -59,7 +59,7 @@ const BasicLayout = ({ children, title }: Props) => {
       <Head>
         <title>{title ? `${title} - ${TITLE_NAME}` : TITLE_NAME}</title>
         <meta name="description" content={TITLE_NAME} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <GlobalStyle />
       <Breadcrumbs
