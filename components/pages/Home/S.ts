@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default {
-  Base: styled.div``,
+  Base: styled.main``,
 
   Wrapper: styled.div`
     margin: 20px;

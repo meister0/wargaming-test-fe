@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background: url('/bg.jpg') center center;
   }
 
   img, picture, video, canvas, svg {
@@ -37,6 +38,12 @@ export const GlobalStyle = createGlobalStyle`
 
   #root, #__next {
     isolation: isolate;
+  }
+  
+  // for breadcrumbs override
+
+  ._2jvtI li a::before {
+    border-left: none;
   }
 `
 

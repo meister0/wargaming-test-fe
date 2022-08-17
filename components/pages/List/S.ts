@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { media } from '~/helpers'
 
 export default {
-  Base: styled.div`
+  Base: styled.main`
     margin: auto;
     width: 100vw;
     height: 100vh;
@@ -12,7 +12,7 @@ export default {
     align-items: center;
     flex-wrap: wrap;
 
-    @media ${media.breaks.mobile} {
+    @media ${media.breaks.max.mobile} {
       justify-content: flex-start;
     }
   `,

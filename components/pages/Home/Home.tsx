@@ -8,6 +8,7 @@ import S from './S'
 const links = {
   '1. Search': '/search',
   '2. List': '/list',
+  '3. Article': '/article',
 } as const
 
 export const Home = () => {
