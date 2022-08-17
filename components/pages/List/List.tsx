@@ -1,7 +1,10 @@
 import React from 'react'
 
-import { __ } from '~/helpers'
-import { useMediaQuery } from '~/hooks'
+import {
+  __,
+  media,
+  useMediaQuery,
+} from '~/helpers'
 
 import { Dropdown } from './Dropdown'
 import S from './S'
@@ -19,7 +22,7 @@ export type ListProps = {
 }
 
 export const List = ({ tagsArray, onSelect, selectedTag }: ListProps) => {
-  const isMobile = useMediaQuery('(max-width: 800px)')
+  const isMobile = useMediaQuery(media.breaks.max.mobile)
   return (
     <>
       <S.Base>
