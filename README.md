@@ -19,4 +19,5 @@ Open [https://meister0.github.io/wargaming-test-fe/](https://meister0.github.io/
 
 ### Developer: Ovchinnikov Dmitry
 
-### Telegram: @dmitry_ovchinnickov
+#### Telegram: @dmitry_ovchinnickov
+#### E-mail: dimatt2013@gmail.com
