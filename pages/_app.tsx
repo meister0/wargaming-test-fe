@@ -1,9 +1,10 @@
 import 'nextjs-breadcrumbs/dist/index.css'
 
 import type { AppProps } from 'next/app'
+import { withStore } from '~/components/hocs/withStore'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default withStore(App)

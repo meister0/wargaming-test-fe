@@ -9,6 +9,7 @@ const links = {
   '1. Search': '/search',
   '2. List': '/list',
   '3. Article': '/article',
+  '4. Widget': '/widget',
 } as const
 
 export const Home = () => {
