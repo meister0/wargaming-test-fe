@@ -61,7 +61,9 @@ export const Dialog = ({ onClose }: DialogProps) => {
   useEffect(() => {
     setItems(
       initialItems.filter(
-        (item) => item.title.includes(search) && item.id + 1 > filter,
+        (item) =>
+          item.title.toLowerCase().includes(search.toLowerCase()) &&
+          item.id + 1 > filter,
       ),
     )
   }, [search, filter, initialItems])

@@ -18,7 +18,9 @@ import { Dialog } from './Dialog'
 import { Item } from './Item'
 import S from './S'
 
-const ITEMS = Array.from({ length: 300 }).map((_, index) => ({
+const ELEMENT_PLURALIZE = ['элемент', 'элемента', 'элементов']
+
+const ITEMS = Array.from({ length: 300 }, (_, index) => ({
   title: `Элемент ${index + 1}`,
   id: index,
 }))
@@ -29,11 +31,10 @@ export const Widget = () => {
   const selectedItems = useAppSelector(selectors.widget.selectedItems)
   const checkSelectedItemsLength = selectedItems.length !== 0
 
-  const pluralizedItems = string.pluralize(selectedItems.length, [
-    'элемент',
-    'элемента',
-    'элементов',
-  ])
+  const pluralizedItems = string.pluralize(
+    selectedItems.length,
+    ELEMENT_PLURALIZE,
+  )
 
   const handleChangeMyMind = () => {
     showDialog(!isDialogShown)
@@ -52,11 +53,9 @@ export const Widget = () => {
     <S.Base>
       <S.Title>Выбор элементов</S.Title>
       <S.Description>
-        {checkSelectedItemsLength ? (
-          <>На данный момент у вас выбрано {pluralizedItems}:</>
-        ) : (
-          <>У вас не выбрано никаких элементов :&apos;(</>
-        )}
+        {checkSelectedItemsLength
+          ? `На данный момент у вас выбрано ${pluralizedItems}:`
+          : `У вас не выбрано никаких элементов :'(`}
       </S.Description>
       {checkSelectedItemsLength && (
         <S.SelectedItemsList>
