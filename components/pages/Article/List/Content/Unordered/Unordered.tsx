@@ -12,14 +12,8 @@ export type UnorderedProps = {
 }
 
 export const Unordered = ({ item }: UnorderedProps) => {
-  const withoutNested = typeof item === 'string'
-
-  return withoutNested ? (
-    <S.UnorderedItem key={item}>
-      <S.UnorderedTitle>{item}</S.UnorderedTitle>
-    </S.UnorderedItem>
-  ) : (
-    <S.UnorderedItem key={item.title}>
+  return (
+    <S.UnorderedItem key={item.id}>
       <S.UnorderedTitle>{item.title}</S.UnorderedTitle>
       {item.nested && (
         <Description>

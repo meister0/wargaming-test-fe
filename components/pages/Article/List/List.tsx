@@ -8,12 +8,11 @@ export const injectNodePositions = {
   after: 'after',
 } as const
 
-export type ListItem =
-  | {
-      title: string
-      nested: ListProps
-    }
-  | string
+export type ListItem = {
+  id: number
+  title: string
+  nested?: ListProps
+}
 
 export type InjectNode = {
   node: React.ReactNode
@@ -41,7 +40,7 @@ export const List = ({
           (node) => node.injectIndex === index,
         )
         return (
-          <React.Fragment key={index}>
+          <React.Fragment key={item.id}>
             {findInjectNode?.position === injectNodePositions.before &&
               findInjectNode.node}
             <DynamicListContent item={item} />

@@ -54,6 +54,9 @@ export default {
 
   Menu: styled(BaseLayout)`
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
     padding-left: 31px;
     top: 0;
     left: 0;
@@ -67,9 +70,6 @@ export default {
       cursor: pointer;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
     ${({ isActive }) =>
       isActive &&
       css`

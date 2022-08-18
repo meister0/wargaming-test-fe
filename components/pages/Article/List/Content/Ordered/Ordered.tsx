@@ -12,14 +12,8 @@ export type OrderedProps = {
 }
 
 export const Ordered = ({ item }: OrderedProps) => {
-  const withoutNested = typeof item === 'string'
-
-  return withoutNested ? (
-    <S.OrderedItem key={item}>
-      <S.OrderedTitle>{`«${item}»`}</S.OrderedTitle>
-    </S.OrderedItem>
-  ) : (
-    <S.OrderedItem key={item.title}>
+  return (
+    <S.OrderedItem key={item.id}>
       <S.OrderedTitle>{`«${item.title}»`}</S.OrderedTitle>
       {item.nested && (
         <Description>
