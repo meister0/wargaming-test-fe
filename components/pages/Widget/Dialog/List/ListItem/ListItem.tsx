@@ -22,10 +22,15 @@ export const ListItem = ({
   }
   return (
     <S.Base key={item.id}>
-      <S.Wrapper isDisabled={isDisabled} onClick={handleSelect}>
-        <S.CheckBox type="checkbox" checked={isChecked} disabled={isDisabled} />
-        <S.Title>{item.title}</S.Title>
-      </S.Wrapper>
+      <S.Label isDisabled={isDisabled}>
+        <S.CheckBox
+          type="checkbox"
+          onChange={handleSelect}
+          checked={isChecked}
+          disabled={isDisabled}
+        />
+        {item.title}
+      </S.Label>
     </S.Base>
   )
 }

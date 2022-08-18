@@ -5,9 +5,15 @@ export default {
     display: flex;
   `,
 
-  Wrapper: styled.div<{ isDisabled: boolean }>`
+  Label: styled.label<{ isDisabled: boolean }>`
     display: flex;
     gap: 16px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #ffffff;
 
     &:hover {
       cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
@@ -22,14 +28,5 @@ export default {
     &:disabled {
       cursor: not-allowed;
     }
-  `,
-
-  Title: styled.p`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    color: #ffffff;
   `,
 }
