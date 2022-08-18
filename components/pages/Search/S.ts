@@ -35,6 +35,7 @@ export const FieldBase = styled.input`
   color: #373f45;
   outline: none;
   transition: 250ms background-color;
+  padding-right: 35px;
 
   &:focus {
     background-color: #ffffff;
