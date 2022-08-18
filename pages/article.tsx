@@ -3,7 +3,7 @@ import { Article } from 'components/pages/Article'
 
 const ArticlePage = () => {
   return (
-    <BasicLayout>
+    <BasicLayout title="Task #3: Article">
       <Article />
     </BasicLayout>
   )
