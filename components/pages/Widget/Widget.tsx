@@ -39,6 +39,10 @@ export const Widget = () => {
     showDialog(!isDialogShown)
   }
 
+  const handleUnselect = (id: number) => {
+    dispatch(actions.widget.unselectItem(id))
+  }
+
   useEffect(() => {
     dispatch(actions.widget.setItems(ITEMS))
     dispatch(actions.widget.setSelectedItems([ITEMS[3], ITEMS[5]]))
@@ -57,7 +61,7 @@ export const Widget = () => {
       {checkSelectedItemsLength && (
         <S.SelectedItemsList>
           {selectedItems.map((item) => (
-            <Item key={item.id} {...item} />
+            <Item key={item.id} item={item} onUnselect={handleUnselect} />
           ))}
         </S.SelectedItemsList>
       )}

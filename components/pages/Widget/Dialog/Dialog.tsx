@@ -39,11 +39,15 @@ export const Dialog = ({ onClose }: DialogProps) => {
     setSearch(event.target.value)
   }
 
+  const handleUnselect = (id: number) => {
+    setSelectedItems(
+      selectedItems.filter((selectedItem) => selectedItem.id !== id),
+    )
+  }
+
   const handleSelectItem = (item: ItemType) => {
     if (selectedItems.some((selectedItem) => selectedItem.id === item.id)) {
-      setSelectedItems(
-        selectedItems.filter((selectedItem) => selectedItem.id !== item.id),
-      )
+      handleUnselect(item.id)
     } else {
       setSelectedItems([...selectedItems, item])
     }
@@ -98,7 +102,7 @@ export const Dialog = ({ onClose }: DialogProps) => {
           <S.Description>Выбранные элементы на данный момент:</S.Description>
           <S.SelectedItemsList>
             {selectedItems.map((item) => (
-              <Item key={item.id} {...item} />
+              <Item key={item.id} item={item} onUnselect={handleUnselect} />
             ))}
           </S.SelectedItemsList>
           <S.Buttons>
