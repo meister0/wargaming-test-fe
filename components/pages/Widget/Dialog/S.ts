@@ -94,6 +94,7 @@ export default {
   Input: styled.input`
     ${inputBase}
     position: relative;
+    padding-right: 25px;
 
     &::-webkit-search-cancel-button {
       position: absolute;
